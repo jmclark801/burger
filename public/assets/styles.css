@@ -1,0 +1,68 @@
+body {
+  background-color: palegoldenrod;
+}
+
+.burgers-wrapper {
+  background: lightcyan;  
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.burgers-to-eat {
+  background: lightcoral;
+  display: flex;
+  flex-basis: 40%;
+}
+
+.burgers-eaten {
+  background: lightblue;
+  display: flex;
+  flex-basis: 40%;
+}
+
+.button {
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background-color:#2dabf9;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.button:hover {
+	background-color:#0688fa;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.flex-center { 
+  display: flex; 
+  justify-content: center; 
+}
+
+h1 { 
+  padding-left: 15px;
+}
+
+.image--center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text {
+  color: darkred;
+}
