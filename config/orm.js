@@ -23,17 +23,23 @@ var orm = {
       cb(result);
     })
   },
-  insertOne: function (table, cols, name, cb) {
+  insertOne: function (table, cols, vals, cb) {
+    console.log(`Table: ${table}
+                Cols: ${cols},
+                Vals: ${vals},
+                cb: ${cb}
+    `)
     console.log('insertOne was called!')
-    var queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ${name}, FALSE`;
-    console.log(queryString);
-    connection.query(queryString, vals, function (err, result) {
+    var queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ("${vals.toString()}", false);`;
+    console.log(`Query String is ${queryString}`);
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
       cb(result);
     });
   },
+
   updateOne: function () {
     console.log('updateOne was called!')
   }

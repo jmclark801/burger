@@ -11,8 +11,12 @@ var burger = {
       cb(res);
     })
   },
-  insertOne: function(objColVals, name, cb){
-    orm.insertOne('burgers', objColVals, name, function(res){
+  insertOne: function(cols, vals, cb){
+    console.log(`Logging from the model: 
+                Cols: ${cols},
+                Vals: ${vals},
+                cb: ${cb}`)
+    orm.insertOne('burgers', cols, vals, function(res){
       cb(res);
     })
   }

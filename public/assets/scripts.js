@@ -1,9 +1,9 @@
 
-
-$("#addBurger").on("submit", function(event) {
+$(".addBurger").on("submit", function(event) {
   event.preventDefault();
   var newBurger = {
-    name: $("#burgerName").val().trim(),
+    burger_name: $("#burgerName").val().trim(),
+    devoured: "FALSE"
   };
   // Send the POST request.
   $.ajax('/api/burgers', {
