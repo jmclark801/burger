@@ -12,15 +12,15 @@ var burger = {
     })
   },
   insertOne: function(cols, vals, cb){
-    console.log(`Logging from the model: 
-                Cols: ${cols},
-                Vals: ${vals},
-                cb: ${cb}`)
     orm.insertOne('burgers', cols, vals, function(res){
       cb(res);
     })
+  },
+  updateOne: function(burgerToUpdate, burgerDevouredStatus, cb) {
+    orm.updateOne('burgers', burgerToUpdate, "devoured", burgerDevouredStatus, function(res){
+      cb(res);
+    })
   }
-
 }
 
 module.exports = burger;

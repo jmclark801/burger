@@ -1,21 +1,23 @@
 <img src="/assets/images/burger.png" class="image--center">
 <h1 class="text--center text">Eat Da Burger</h1>
 <div class="burgers-wrapper">
-  <div class="burgers-to-eat">
+  <div class="burger burgers-to-eat">
     {{> burgers-to-eat }}
-
   </div>
-  <div class="burgers-eaten">
+  <div class="burger burgers-eaten">
     {{> burgers-eaten }}
-  </div>
-  <div class="all-burgers">
-    
   </div>
 </div>
 <div class="flex-center">
   <form class="addBurger">
-    <label for="burgerName">Enter a Burger You'd Like to Try:</labe>
-    <input id="burgerName" type="text" placeholder="Enter the burger name here">
-    <button type="submit" class="button">Add Burger</button>
+    <div class="flex-center">
+      <label for="burgerName" class="margin">Enter a Burger You'd Like to Try:</label>
+    </div>
+    <div class="flex-center">
+      <input id="burgerName" class="margin" type="text" placeholder="Enter the burger name here">
+    </div>
+    <div class="flex-center">
+      <button type="submit" class="button margin">Add Burger</button>
+    </div>
   </form>
 </div>

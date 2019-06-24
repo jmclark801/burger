@@ -2,23 +2,31 @@ body {
   background-color: palegoldenrod;
 }
 
-.burgers-wrapper {
-  background: lightcyan;  
+.burgers-wrapper { 
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   margin-bottom: 50px;
+}
+
+.burger {
+  display: flex;
+  flex-basis: 40%;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .burgers-to-eat {
   background: lightcoral;
-  display: flex;
-  flex-basis: 40%;
+
+}
+
+.burgers-to-eat * {
+  
 }
 
 .burgers-eaten {
   background: lightblue;
-  display: flex;
-  flex-basis: 40%;
 }
 
 .button {
@@ -43,6 +51,10 @@ body {
 	top:1px;
 }
 
+#button-devour {
+  margin-left: 20px;
+}
+
 .flex-center { 
   display: flex; 
   justify-content: center; 
@@ -56,7 +68,24 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 15%;
+  width: 12%;
+}
+
+input {
+  font-size: 18px;
+  height: 30px;
+  width: 250px;
+}
+
+li {
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 30px 0px 0px;
+}
+
+.margin {
+  margin: 10px;
 }
 
 .text--center {

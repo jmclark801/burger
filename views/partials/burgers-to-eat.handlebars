@@ -1,6 +1,8 @@
-<h1>Hello from Burgers to Eat!</h1>
+<h1>Burgers I'd like to eat:</h1>
 <ul>
   {{#each burgers}}
-  <li>{{ burger_name }}</li>
+  {{#unless devoured}}
+  <li>{{burger_name}} <button id="button-devour" class="devour button" data-id="{{this.id}}">Devour me!</button></li>
+  {{/unless}}
   {{/each}}
 </ul>

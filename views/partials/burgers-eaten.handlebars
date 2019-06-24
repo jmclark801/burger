@@ -1,1 +1,8 @@
-<h1>Hello from Burgers Eaten!</h1>
+<h1>Burgers I've eaten:</h1>
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  <li>{{burger_name}}</li>
+  {{/if}}
+  {{/each}}
+</ul>

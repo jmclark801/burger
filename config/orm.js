@@ -1,8 +1,9 @@
 const connection = require('../config/connection.js');
 
+// Create the ORM
 var orm = {
+  // Select all from a given table
   selectAll: function (tableInput, cb) {
-    console.log("select all was called");
     const queryString = `SELECT * FROM ${tableInput};`
     connection.query(queryString, function (err, result) {
       if (err) {
@@ -11,27 +12,9 @@ var orm = {
       cb(result);
     });
   },
-  selectUndevoured: function (tableInput, cb) {
-    console.log('select all undevoured was called');
-    const queryString = `SELECT * FROM ${tableInput} WHERE devoured = false;`
-    connection.query(queryString, function (err, result) {
-      if (err) {
-        throw Error('error with selecting undevoured burger').then(function () {
-          console.log(Error);
-        })
-      }
-      cb(result);
-    })
-  },
+  // Insert one into a table
   insertOne: function (table, cols, vals, cb) {
-    console.log(`Table: ${table}
-                Cols: ${cols},
-                Vals: ${vals},
-                cb: ${cb}
-    `)
-    console.log('insertOne was called!')
     var queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ("${vals.toString()}", false);`;
-    console.log(`Query String is ${queryString}`);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
@@ -39,9 +22,20 @@ var orm = {
       cb(result);
     });
   },
+  //{colNmae:value}
+  updateOne: function (tableToUpdate, itemToUpdate, colToUpdate, valToSet, cb) {
+    // An example of what the SQL should look like:
+    // UPDATE burgers SET devoured = true WHERE id = 2;
 
-  updateOne: function () {
-    console.log('updateOne was called!')
+
+    var queryString = `UPDATE ${tableToUpdate} SET ${colToUpdate} = ${valToSet} WHERE id = ${itemToUpdate};`
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    })
   }
 }
 
